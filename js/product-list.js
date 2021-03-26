@@ -3,7 +3,7 @@ class ProductList {
     this.cart = cart;
     this.container = document.querySelector('.products-container');
     this.productService = new ProductsService();
-    this.sortDirection = 'ascending';
+    this.sortDirection = 'descending';
     this.productService
       .getProducts()
       .then(() => this.renderProducts())
@@ -13,9 +13,9 @@ class ProductList {
     let productListDomString = '';
     const products = await this.productService.getProducts();
     [...products]
-      .sort( (a, b) => this.sortDirection === 'ascending' 
-                         ? a.price - b.price
-                         : b.price - a.price)
+      .sort( (a, b) => this.sortDirection === 'descending' 
+                         ? b.price - a.price
+                         : a.price - b.price)
       .forEach(product => {
       productListDomString += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                   <div class="card product">
