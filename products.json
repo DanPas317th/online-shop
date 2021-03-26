@@ -27,4 +27,11 @@
         "description": "Viking sticker",
         "price": 34.99
     }
+    {
+        "id": "5",
+        "title": "Man",
+        "image": "hoodman.png",
+        "description": "Man in hood",
+        "price": 99.99
+    }
 ]
